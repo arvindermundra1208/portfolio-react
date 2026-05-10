@@ -47,11 +47,22 @@ const projects = [
     title: 'Enterprise Inventory & Backend System',
     gh: 'https://github.com/arvindermundra',
     bullets: [
-      'Oracle SQL/PL-SQL redesign with optimized indexing & partitioning',
-      'Stored procedures + smart triggers for real-time inventory updates',
-      'Reduced data sync effort by 80%',
+      'Relational database redesign for a simulated 1M+ transaction-row engine with advanced indexing & partitioning',
+      'PL/SQL stored procedures and triggers for real-time inventory sync — reduced transaction latency by 80%',
+      'Optimized physical schema layers and partition keys for high-throughput ETL batch jobs',
     ],
-    chips: ['Oracle SQL', 'PL/SQL', 'ETL', 'Database Architecture'],
+    chips: ['Oracle SQL', 'PL/SQL', 'ETL', 'Partitioning', 'Stored Procedures'],
+  },
+  {
+    cat: 'de',
+    title: 'Time-Series Big Data Pipeline',
+    gh: 'https://github.com/arvindermundra',
+    bullets: [
+      'Ingested 10+ years of raw historical equity price data using Python and PySpark',
+      'Built cleaning, normalization, and feature engineering pipelines producing analytics-ready datasets',
+      'Applied data quality checks and schema validation across rolling feature windows for reliable downstream modeling',
+    ],
+    chips: ['Python', 'PySpark', 'Apache Spark', 'Pandas', 'Feature Engineering', 'Data Quality'],
   },
   {
     cat: 'ml',
@@ -70,6 +81,7 @@ const FILTERS = [
   { key: 'all', label: 'All' },
   { key: 'fullstack', label: 'Full-Stack' },
   { key: 'ml', label: 'Machine Learning' },
+  { key: 'de', label: 'Data Engineering' },
 ]
 
 export default function Projects() {
@@ -105,8 +117,8 @@ export default function Projects() {
             <FadeIn key={p.title} delay={i * 0.06}>
               <div className={`card ${styles.card}`}>
                 <div className={styles.head}>
-                  <span className={`${styles.badge} ${p.cat === 'ml' ? styles.badgeMl : styles.badgeFs}`}>
-                    {p.cat === 'ml' ? 'Machine Learning' : 'Full-Stack'}
+                  <span className={`${styles.badge} ${p.cat === 'ml' ? styles.badgeMl : p.cat === 'de' ? styles.badgeDe : styles.badgeFs}`}>
+                    {p.cat === 'ml' ? 'Machine Learning' : p.cat === 'de' ? 'Data Engineering' : 'Full-Stack'}
                   </span>
                   <a href={p.gh} target="_blank" rel="noopener noreferrer" className={styles.ghLink} aria-label="GitHub">
                     {GITHUB_SVG}

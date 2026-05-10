@@ -3,34 +3,34 @@ import styles from './Skills.module.css'
 
 const groups = [
   {
-    name: 'Programming',
-    desc: 'Languages & scripting',
+    name: 'Languages',
+    desc: 'Programming & scripting',
     variant: 'chip-coral',
-    skills: ['Python', 'Java', 'SQL', 'C++', 'JavaScript', 'R', 'HTML', 'CSS', 'Shell Scripting'],
+    skills: ['Python', 'Java', 'SQL', 'TypeScript', 'Go', 'Scala', 'R', 'C++', 'Bash/Shell'],
   },
   {
-    name: 'Data & AI',
-    desc: 'Analytics & machine learning',
+    name: 'Data Engineering',
+    desc: 'Pipelines, streaming & modeling',
     variant: 'chip-sky',
-    skills: ['Machine Learning', 'Statistical Modeling', 'ETL', 'Data Pipelines', 'Data Visualization', 'EDA', 'Data Modeling'],
+    skills: ['Apache Spark', 'PySpark', 'Apache Kafka', 'Apache Airflow', 'dbt', 'ETL/ELT', 'CDC', 'Batch & Streaming', 'Data Modeling', 'Data Quality'],
   },
   {
-    name: 'Frameworks',
-    desc: 'Libraries & platforms',
+    name: 'Frameworks & APIs',
+    desc: 'Backend & frontend platforms',
     variant: 'chip-violet',
-    skills: ['Spring Boot', 'React', 'Angular', 'NumPy', 'Scikit-Learn', 'PyTorch', 'TensorFlow', 'Django'],
+    skills: ['Spring Boot', 'Hibernate', 'gRPC', 'REST APIs', 'GraphQL', 'Node.js', 'React', 'Angular'],
   },
   {
     name: 'Cloud & Databases',
     desc: 'Infrastructure & storage',
     variant: 'chip-sage',
-    skills: ['GCP', 'AWS', 'Azure', 'MySQL', 'PostgreSQL', 'MongoDB', 'Oracle SQL'],
+    skills: ['GCP', 'AWS (S3, SQS, Glue)', 'Azure', 'Snowflake', 'BigQuery', 'Databricks', 'PostgreSQL', 'MySQL', 'Oracle SQL', 'Redis', 'MS SQL Server'],
   },
   {
-    name: 'Tools',
-    desc: 'Dev & analytics tooling',
+    name: 'DevOps & Observability',
+    desc: 'Deployment, tooling & monitoring',
     variant: 'chip-amber',
-    skills: ['Power BI', 'GitHub', 'Postman', 'Jupyter', 'RStudio', 'Google Colab', 'Excel'],
+    skills: ['Docker', 'Kubernetes', 'Terraform', 'Jenkins (CI/CD)', 'Git', 'Power BI', 'SLI/SLO Monitoring', 'Great Expectations', 'Postman', 'Linux/Unix'],
   },
 ]
 
