@@ -52,16 +52,32 @@ export default function Contact() {
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
 
-  const handleSubmit = (e) => {
+  const [error, setError] = useState('')
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) return
     setSending(true)
-    setTimeout(() => {
+    setError('')
+    try {
+      const res = await fetch('https://formspree.io/f/xldblzya', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name: form.name, email: form.email, message: form.message }),
+      })
+      const data = await res.json()
+      if (res.ok) {
+        setSent(true)
+        setForm({ name: '', email: '', message: '' })
+        setTimeout(() => setSent(false), 5000)
+      } else {
+        setError(data?.errors?.[0]?.message || 'Something went wrong. Please try again.')
+      }
+    } catch {
+      setError('Network error. Please try again.')
+    } finally {
       setSending(false)
-      setSent(true)
-      setForm({ name: '', email: '', message: '' })
-      setTimeout(() => setSent(false), 5000)
-    }, 900)
+    }
   }
 
   return (
@@ -117,6 +133,7 @@ export default function Contact() {
                   {sending ? 'Sending…' : 'Send Message'}
                 </button>
                 {sent && <div className={styles.fsuccess}>Message received — I'll get back to you within 24 hours.</div>}
+                {error && <div className={styles.ferror}>{error}</div>}
               </form>
             </div>
           </FadeIn>

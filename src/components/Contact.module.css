@@ -143,4 +143,15 @@
   font-weight: 500;
 }
 
+.ferror {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(180, 60, 60, 0.08);
+  border: 1px solid rgba(180, 60, 60, 0.2);
+  border-radius: 6px;
+  color: #8b1a1a;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 @media(max-width:900px){ .grid { grid-template-columns: 1fr; } }
