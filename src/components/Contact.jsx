@@ -68,34 +68,38 @@ export default function Contact() {
     <section id="contact">
       <div className="wrap">
         <FadeIn><span className="sec-label">07 — Contact</span></FadeIn>
-        <FadeIn delay={0.06}><h2 className="sec-title">Let's <span>Connect</span></h2></FadeIn>
+        <FadeIn delay={0.06}><h2 className="sec-title">Get in <span>Touch</span></h2></FadeIn>
         <FadeIn delay={0.1}>
           <p className={styles.sub}>
-            Actively seeking <strong>Summer &amp; Fall 2026 internships</strong> in Software Engineering, Full-Stack Development, and Data Science. Always open to interesting problems and great teams.
+            I'm always interested in hearing about new projects and opportunities. Feel free to reach out!
           </p>
         </FadeIn>
 
-        <div className={styles.grid}>
+        <div className={styles.mainContent}>
+          {/* Icon-based Contact */}
           <FadeIn delay={0.12}>
-            <div className={`card ${styles.infoCard}`}>
-              <div className={styles.cardTitle}>Direct Contact</div>
-              <div className={styles.items}>
-                {CONTACT_ITEMS.map(ci => (
-                  <a key={ci.label} href={ci.href} target={ci.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className={styles.item}>
-                    <div className={styles.itemIcon}>{ci.icon}</div>
-                    <div>
-                      <div className={styles.itemLabel}>{ci.label}</div>
-                      <div className={styles.itemValue}>{ci.value}</div>
-                    </div>
-                  </a>
-                ))}
-              </div>
+            <div className={styles.contactIcons}>
+              {CONTACT_ITEMS.map((ci, idx) => (
+                <a 
+                  key={ci.label} 
+                  href={ci.href} 
+                  target={ci.href.startsWith('http') ? '_blank' : undefined} 
+                  rel="noopener noreferrer" 
+                  className={styles.iconLink}
+                  title={`${ci.label}: ${ci.value}`}
+                  style={{ '--delay': `${idx * 0.06}s` }}
+                >
+                  <div className={styles.iconBg}>{ci.icon}</div>
+                  <div className={styles.tooltip}>{ci.label}</div>
+                </a>
+              ))}
             </div>
           </FadeIn>
 
+          {/* Contact Form */}
           <FadeIn delay={0.18}>
             <div className={`card ${styles.formCard}`}>
-              <div className={styles.cardTitle}>Send a Message</div>
+              <div className={styles.cardTitle}>Message</div>
               <form onSubmit={handleSubmit} noValidate>
                 <div className={styles.fgrp}>
                   <label htmlFor="fn">Name</label>

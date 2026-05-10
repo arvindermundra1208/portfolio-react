@@ -3,26 +3,27 @@
   display: flex; align-items: center;
 }
 .grid {
-  display: grid; grid-template-columns: 1fr 360px;
-  gap: 80px; align-items: center;
+  display: grid; grid-template-columns: 1.2fr 340px;
+  gap: 64px; align-items: center;
   padding-top: var(--nav-h);
   min-height: 100vh;
 }
 .eyebrow {
-  font-family: var(--mono); font-size: 0.78rem; font-weight: 500;
-  color: var(--accent); letter-spacing: 0.1em;
-  text-transform: uppercase; margin-bottom: 20px;
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 500;
+  color: var(--accent); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 24px;
   display: flex; align-items: center; gap: 10px;
 }
 .eyebrow::before {
-  content: ''; display: block; width: 32px; height: 1px; background: var(--accent);
+  content: ''; display: block; width: 24px; height: 1px; background: var(--accent);
 }
 .name {
-  font-size: clamp(3.2rem, 7vw, 5.6rem);
-  font-weight: 900; letter-spacing: -0.04em;
-  line-height: 1.0; color: var(--t1); margin-bottom: 22px;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-weight: 600; letter-spacing: -0.02em;
+  line-height: 1.05; color: var(--t1); margin-bottom: 28px;
 }
-.name em { font-style: normal; color: var(--accent); }
+.name em { font-style: normal; color: var(--accent); font-weight: 700; }
 
 .roleLine {
   display: flex; align-items: center; gap: 6px;
@@ -38,10 +39,10 @@
 
 .statusBadge {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 6px 14px; border-radius: 99px;
-  background: var(--accent-dim); border: 1px solid rgba(214,143,96,0.25);
-  font-size: 0.8rem; font-weight: 600; color: var(--accent-2);
-  margin-bottom: 20px;
+  padding: 8px 16px; border-radius: 6px;
+  background: var(--bg-surface); border: 1px solid var(--border);
+  font-size: 0.85rem; font-weight: 500; color: var(--t1);
+  margin-bottom: 24px;
 }
 
 .bio {
@@ -52,9 +53,9 @@
 
 .seek {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.82rem; color: var(--t2); margin-bottom: 32px;
-  padding: 8px 14px; border-radius: var(--r-sm);
-  background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+  font-size: 0.85rem; color: var(--t2); margin-bottom: 28px;
+  padding: 9px 16px; border-radius: 6px;
+  background: var(--bg-surface); border: 1px solid var(--border);
 }
 .seekDot {
   width: 5px; height: 5px; border-radius: 50%;
@@ -66,35 +67,23 @@
 .socials { display: flex; gap: 10px; }
 .socLink {
   display: flex; align-items: center; justify-content: center;
-  width: 38px; height: 38px; border-radius: var(--r-sm);
-  color: var(--t3); border: 1px solid var(--border);
+  width: 40px; height: 40px; border-radius: 6px;
+  color: var(--t2); border: 1px solid var(--border);
   transition: .2s var(--ease);
 }
-.socLink:hover { color: var(--t1); border-color: var(--border-md); background: rgba(255,255,255,0.05); }
+.socLink:hover { color: var(--t1); border-color: var(--border-md); background: var(--bg-surface); }
 
 /* Photo */
 .photoCol {
   display: flex; flex-direction: column; align-items: center; gap: 16px;
   position: relative;
 }
-.photoGlow {
-  position: absolute; width: 300px; height: 300px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(214,143,96,0.12) 0%, transparent 70%);
-  top: 20px; left: 50%; transform: translateX(-50%);
-  pointer-events: none; z-index: 0;
-}
 .photoWrap {
-  position: relative; width: 300px; height: 340px;
-  border-radius: var(--r-xl); overflow: hidden;
-  border: 1px solid rgba(214,143,96,0.25);
-  box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(214,143,96,0.10);
-  z-index: 1;
-}
-.photoWrap::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(14,12,10,0.45) 0%, transparent 55%);
-  pointer-events: none;
+  position: relative; width: 100%; aspect-ratio: 280 / 340;
+  max-width: 280px;
+  border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 .photoWrap img {
   width: 100%; height: 100%;
@@ -102,29 +91,12 @@
 }
 
 .floatBadge {
-  position: absolute;
-  left: calc(50% + var(--fx, 0px));
-  top: var(--fy, 50px);
-  transform: translateX(-50%);
-  z-index: 2;
-  font-family: var(--mono); font-size: 0.62rem; font-weight: 600;
-  padding: 3px 10px; border-radius: 99px;
-  background: var(--bg-surface); border: 1px solid rgba(214,143,96,0.3);
-  color: var(--accent-2);
-  animation: floatY 3.5s ease-in-out infinite;
-  white-space: nowrap;
+  display: none;
 }
 
 .photoStrip {
-  width: 100%; max-width: 300px;
-  padding: 12px 16px;
-  background: var(--bg-surface); border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  display: flex; flex-direction: column; gap: 4px;
-  z-index: 1;
+  display: none;
 }
-.stripLabel { font-family: var(--mono); font-size: 0.63rem; color: var(--t3); text-transform: uppercase; letter-spacing: 0.1em; }
-.stripValue { font-size: 0.82rem; font-weight: 600; color: var(--t1); }
 
 .scrollCue {
   position: absolute; bottom: 36px; left: 50%;

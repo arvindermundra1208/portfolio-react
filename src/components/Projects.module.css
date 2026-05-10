@@ -4,39 +4,87 @@
 }
 .filterRow { display: flex; gap: 6px; flex-wrap: wrap; }
 .ftab {
-  padding: 7px 18px; border-radius: 99px; font-size: 0.8rem; font-weight: 600;
-  color: var(--t3); background: transparent;
+  padding: 8px 18px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+  color: var(--t2); background: transparent;
   border: 1px solid var(--border); transition: .2s var(--ease);
   font-family: var(--sans);
 }
-.ftab:hover { color: var(--t2); border-color: var(--border-md); }
-.on { color: #0e0c0a !important; background: var(--accent) !important; border-color: transparent !important; box-shadow: 0 2px 12px rgba(214,143,96,.35); }
+.ftab:hover { color: var(--t1); border-color: var(--border-md); background: var(--bg-surface); }
+.on { color: #ffffff !important; background: var(--accent) !important; border-color: transparent !important; box-shadow: 0 2px 8px rgba(27,27,27,0.15); }
 
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.card { padding: 22px; display: flex; flex-direction: column; }
-.head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 10px; }
-.badge {
-  font-family: var(--mono); font-size: 0.63rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 3px 9px; border-radius: 99px;
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.card { 
+  padding: 24px; 
+  display: flex; 
+  flex-direction: column;
+  border-radius: 8px;
 }
-.badgeMl { color: var(--sage); background: rgba(126,200,160,0.1); border: 1px solid rgba(126,200,160,.2); }
-.badgeFs { color: var(--accent-2); background: var(--accent-dim); border: 1px solid rgba(214,143,96,.2); }
+.head { 
+  display: flex; 
+  align-items: flex-start; 
+  justify-content: space-between; 
+  margin-bottom: 14px; 
+  gap: 12px; 
+}
+.badge {
+  font-family: var(--sans); 
+  font-size: 0.7rem; 
+  font-weight: 600;
+  text-transform: uppercase; 
+  letter-spacing: 0.07em;
+  padding: 4px 10px; 
+  border-radius: 4px;
+}
+.badgeMl { color: #3a5a4b; background: rgba(90,122,107,0.1); border: 1px solid rgba(90,122,107,0.2); }
+.badgeFs { color: #8b4513; background: rgba(139,69,19,0.08); border: 1px solid rgba(139,69,19,0.2); }
 .ghLink {
-  display: flex; align-items: center; justify-content: center;
-  width: 30px; height: 30px; border-radius: var(--r-sm);
-  color: var(--t3); border: 1px solid var(--border); flex-shrink: 0;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  width: 36px; 
+  height: 36px; 
+  border-radius: 6px;
+  color: var(--t2); 
+  border: 1px solid var(--border); 
+  flex-shrink: 0;
   transition: .2s;
 }
-.ghLink:hover { color: var(--t1); border-color: var(--border-md); background: rgba(255,255,255,.05); }
-.title { font-size: 0.95rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; color: var(--t1); }
-.bullets { flex: 1; margin-bottom: 14px; display: flex; flex-direction: column; gap: 5px; }
-.bullets li {
-  display: flex; align-items: flex-start; gap: 8px;
-  font-size: 0.81rem; color: var(--t2); line-height: 1.55;
+.ghLink:hover { 
+  color: var(--t1); 
+  border-color: var(--border-md); 
+  background: var(--bg-surface); 
 }
-.bullets li::before { content: '→'; color: var(--t3); flex-shrink: 0; font-size: 0.68rem; margin-top: 2px; font-family: var(--mono); }
-.chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.title { 
+  font-family: var(--serif);
+  font-size: 1rem; 
+  font-weight: 600; 
+  letter-spacing: -0.01em; 
+  margin-bottom: 12px; 
+  color: var(--t1); 
+}
+.bullets { 
+  flex: 1; 
+  margin-bottom: 16px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+}
+.bullets li {
+  display: flex; 
+  align-items: flex-start; 
+  gap: 8px;
+  font-size: 0.85rem; 
+  color: var(--t2); 
+  line-height: 1.6;
+}
+.bullets li::before { 
+  content: '→'; 
+  color: var(--t3); 
+  flex-shrink: 0; 
+  font-size: 0.7rem; 
+  margin-top: 2px; 
+}
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
 
 @media(max-width:1060px){ .grid { grid-template-columns: repeat(2,1fr); } }
 @media(max-width:640px)  { .grid { grid-template-columns: 1fr; } }

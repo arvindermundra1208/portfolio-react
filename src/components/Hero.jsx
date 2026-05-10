@@ -56,7 +56,7 @@ export default function Hero() {
               Software Engineer &amp; Data Scientist
             </motion.div>
             <motion.h1 className={styles.name} {...fadeUp(0.08)}>
-              Arvinder<br /><em>Mundra.</em>
+              Arvinder<br /><em>Mundra</em>
             </motion.h1>
             <motion.div className={styles.roleLine} {...fadeUp(0.16)}>
               <span className={styles.rolePrefix}>I'm&nbsp;</span>
@@ -104,9 +104,8 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right */}
+          {/* Right - Clean Photo */}
           <motion.div className={styles.photoCol} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
-            <div className={styles.photoGlow} />
             <div className={styles.photoWrap}>
               <img
                 src="https://arvindermundraa.github.io/ArvinderMundra/assets/images/Edited_10-10Feb_12-16-55.jpg"
@@ -114,30 +113,8 @@ export default function Hero() {
                 loading="eager"
               />
             </div>
-            {TECH_BADGES.map((badge, i) => (
-              <span
-                key={badge}
-                className={styles.floatBadge}
-                style={{
-                  animationDelay: `${i * 0.4}s`,
-                  '--fx': `${[-20, 22, -18, 24, -12][i]}px`,
-                  '--fy': `${[30, 80, 150, 220, 280][i]}px`,
-                }}
-              >
-                {badge}
-              </span>
-            ))}
-            <div className={styles.photoStrip}>
-              <div className={styles.stripLabel}>Based in</div>
-              <div className={styles.stripValue}>College Station, TX</div>
-            </div>
           </motion.div>
         </div>
-      </div>
-
-      <div className={styles.scrollCue}>
-        <span>scroll</span>
-        <span className={styles.scrollArrow} />
       </div>
     </section>
   )
