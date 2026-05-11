@@ -34,7 +34,7 @@ const projects = [
   {
     cat: 'fullstack',
     title: 'Secure Interactive Banking Platform',
-    gh: 'https://github.com/arvindermundra',
+    gh: 'https://github.com/arvindermundra1208',
     bullets: [
       'Angular frontend + Java/Spring Boot backend, multi-tier architecture',
       'Spring Security RBAC, encrypted data, session management',
@@ -45,7 +45,7 @@ const projects = [
   {
     cat: 'fullstack',
     title: 'Enterprise Inventory & Backend System',
-    gh: 'https://github.com/arvindermundra',
+    gh: 'https://github.com/arvindermundra1208',
     bullets: [
       'Relational database redesign for a simulated 1M+ transaction-row engine with advanced indexing & partitioning',
       'PL/SQL stored procedures and triggers for real-time inventory sync — reduced transaction latency by 80%',
@@ -56,7 +56,7 @@ const projects = [
   {
     cat: 'de',
     title: 'Time-Series Big Data Pipeline',
-    gh: 'https://github.com/arvindermundra',
+    gh: 'https://github.com/arvindermundra1208',
     bullets: [
       'Ingested 10+ years of raw historical equity price data using Python and PySpark',
       'Built cleaning, normalization, and feature engineering pipelines producing analytics-ready datasets',
